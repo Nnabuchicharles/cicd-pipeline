@@ -17,8 +17,8 @@ resource "aws_ecs_task_definition" "this" {
 
   container_definitions = jsonencode([
     {
-      name  = "app"
-      image = "${aws_ecr_repository.this.repository_url}:${var.image_tag}"
+      name      = "app"
+      image     = "${aws_ecr_repository.this.repository_url}:${var.image_tag}"
       essential = true
       portMappings = [
         {
@@ -46,8 +46,8 @@ resource "aws_ecs_service" "this" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    subnets         = [for s in aws_subnet.private : s.id]
-    security_groups = [aws_security_group.ecs_sg.id]
+    subnets          = [for s in aws_subnet.private : s.id]
+    security_groups  = [aws_security_group.ecs_sg.id]
     assign_public_ip = false
   }
 
