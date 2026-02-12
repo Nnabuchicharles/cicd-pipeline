@@ -1,0 +1,16 @@
+# Node
+app/node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Terraform
+infra/.terraform
+infra/.terraform.lock.hcl
+infra/terraform.tfstate
+infra/terraform.tfstate.backup
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode
