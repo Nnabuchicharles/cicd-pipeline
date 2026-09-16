@@ -5,10 +5,11 @@ yarn-debug.log*
 yarn-error.log*
 
 # Terraform
-infra/.terraform
-infra/.terraform.lock.hcl
-infra/terraform.tfstate
-infra/terraform.tfstate.backup
+infra/.terraform/
+infra/*.tfvars
+!infra/*.tfvars.example
+*.tfstate
+*.tfstate.*
 
 # OS / editors
 .DS_Store
